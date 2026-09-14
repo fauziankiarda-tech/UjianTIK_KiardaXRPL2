@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kuliner Khas Mojokerto</title>
 
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
 
@@ -18,315 +20,589 @@
             color: #4a2c20;
         }
 
+        /* HEADER */
+
         header {
-            background: #8b4513;
+            background: linear-gradient(135deg, #8b4513, #d2691e);
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 35px 20px;
         }
 
         header h1 {
             font-size: 32px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
+
+        header p {
+            font-size: 16px;
+        }
+
+        /* NAVBAR */
 
         nav {
             background: #5c2f16;
-            padding: 13px;
+            padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 15px;
             font-weight: bold;
         }
 
+        nav a:hover {
+            color: #ffd39b;
+        }
+
+        /* HERO */
+
         .hero {
             text-align: center;
-            padding: 45px 20px;
-            background: #f4c27a;
+            padding: 60px 20px;
+            background: #ffd9a8;
         }
 
         .hero h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin-bottom: 12px;
         }
 
         .hero p {
-            margin-bottom: 20px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
         }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #25d366;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* PRODUK */
 
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 35px 20px;
+            padding: 50px 20px;
         }
 
         .judul {
             text-align: center;
-            margin-bottom: 25px;
+            font-size: 28px;
+            margin-bottom: 30px;
         }
 
         .produk {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
         .card {
             background: white;
-            border-radius: 15px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* FOTO PRODUK */
+
+        .foto {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .isi {
             padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px #0002;
         }
 
-        .gambar {
-            font-size: 65px;
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
+        .isi h3 {
+            font-size: 22px;
             margin-bottom: 8px;
+        }
+
+        .isi p {
+            color: #666;
+            line-height: 1.5;
+            min-height: 48px;
         }
 
         .harga {
             color: #d2691e;
-            font-size: 20px;
+            font-size: 21px;
             font-weight: bold;
-            margin: 12px 0;
+            margin: 15px 0;
         }
 
-        .card button {
+        .tombol {
+            width: 100%;
             border: none;
             background: #d2691e;
             color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 9px;
+            font-size: 15px;
+            font-weight: bold;
             cursor: pointer;
         }
 
-        .card button:hover {
+        .tombol:hover {
             background: #8b4513;
         }
 
+        /* KERANJANG */
+
         #keranjang {
+            margin-top: 40px;
             background: white;
-            margin-top: 30px;
             padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px #0002;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+        }
+
+        #keranjang h2 {
+            margin-bottom: 15px;
         }
 
         #daftarPesanan {
-            margin: 15px 0;
-            line-height: 1.8;
+            line-height: 2;
+            color: #555;
         }
 
         .total {
             font-size: 22px;
             font-weight: bold;
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
         .wa {
             background: #25d366;
-            border: none;
             color: white;
-            padding: 13px 20px;
-            border-radius: 8px;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 9px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
         }
 
-        .info {
-            background: #f4c27a;
-            text-align: center;
-            padding: 35px 20px;
+        .wa:hover {
+            background: #1da851;
         }
+
+        /* KONTAK */
+
+        .kontak {
+            background: #ffd9a8;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .kontak p {
+            margin-top: 8px;
+        }
+
+        /* FOOTER */
 
         footer {
             background: #5c2f16;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 22px;
         }
+
+        /* HP */
+
+        @media (max-width: 750px) {
+
+            .produk {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            .hero h2 {
+                font-size: 26px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <h1>Kuliner Mojokerto</h1>
-    <p>Kreco • Es Janggelan • Risol</p>
-</header>
 
-<nav>
-    <a href="#beranda">Beranda</a>
-    <a href="#produk">Menu</a>
-    <a href="#pesanan">Pesanan</a>
-    <a href="#kontak">Kontak</a>
-</nav>
+    <!-- HEADER -->
 
-<section class="hero" id="beranda">
-    <h2>Jajanan & Minuman Favorit Mojokerto</h2>
-    <p>Nikmati makanan dan minuman dengan rasa yang enak dan harga bersahabat.</p>
-    <a href="#produk" class="wa">Lihat Menu</a>
-</section>
+    <header>
 
-<section class="container" id="produk">
+        <h1>🍽️ Kuliner Khas Mojokerto</h1>
 
-    <h2 class="judul">Pilihan Menu</h2>
+        <p>
+            Kreco • Es Janggelan • Risol
+        </p>
 
-    <div class="produk">
+    </header>
 
-        <div class="card">
-            <div class="gambar">🐚</div>
-            <h3>Kreco</h3>
-            <p>Kreco dengan bumbu khas yang gurih dan nikmat.</p>
-            <div class="harga">Rp10.000</div>
-            <button onclick="tambah('Kreco', 10000)">
-                Tambah
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <a href="#beranda">Beranda</a>
+
+        <a href="#menu">Menu</a>
+
+        <a href="#keranjang">Pesanan</a>
+
+        <a href="#kontak">Kontak</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="beranda">
+
+        <h2>Rasa Khas Mojokerto</h2>
+
+        <p>
+            Nikmati berbagai makanan dan minuman pilihan
+            dengan rasa lezat dan harga bersahabat.
+        </p>
+
+        <a href="#menu" class="btn">
+            Lihat Menu
+        </a>
+
+    </section>
+
+
+    <!-- MENU -->
+
+    <section class="container" id="menu">
+
+        <h2 class="judul">
+            🍴 Menu Kami
+        </h2>
+
+
+        <div class="produk">
+
+
+            <!-- KRECO -->
+
+            <div class="card">
+
+                <img
+                    src="kreco.jpg"
+                    alt="Kreco"
+                    class="foto"
+                >
+
+                <div class="isi">
+
+                    <h3>🐚 Kreco</h3>
+
+                    <p>
+                        Kreco dengan bumbu khas yang
+                        gurih dan nikmat.
+                    </p>
+
+                    <div class="harga">
+                        Rp10.000
+                    </div>
+
+                    <button
+                        class="tombol"
+                        onclick="tambah('Kreco', 10000)"
+                    >
+                        + Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ES JANGGELAN -->
+
+            <div class="card">
+
+                <img
+                    src="janggelan.jpg"
+                    alt="Es Janggelan"
+                    class="foto"
+                >
+
+                <div class="isi">
+
+                    <h3>🥤 Es Janggelan</h3>
+
+                    <p>
+                        Minuman segar dengan janggelan
+                        dan kuah manis.
+                    </p>
+
+                    <div class="harga">
+                        Rp5.000
+                    </div>
+
+                    <button
+                        class="tombol"
+                        onclick="tambah('Es Janggelan', 5000)"
+                    >
+                        + Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RISOL -->
+
+            <div class="card">
+
+                <img
+                    src="risol.jpg"
+                    alt="Risol"
+                    class="foto"
+                >
+
+                <div class="isi">
+
+                    <h3>🥟 Risol</h3>
+
+                    <p>
+                        Risol renyah dengan isian
+                        yang lezat dan gurih.
+                    </p>
+
+                    <div class="harga">
+                        Rp4.000
+                    </div>
+
+                    <button
+                        class="tombol"
+                        onclick="tambah('Risol', 4000)"
+                    >
+                        + Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- KERANJANG -->
+
+        <div id="keranjang">
+
+            <h2>🛒 Pesanan Kamu</h2>
+
+            <div id="daftarPesanan">
+                Belum ada pesanan.
+            </div>
+
+            <div class="total">
+
+                Total:
+                Rp<span id="total">0</span>
+
+            </div>
+
+            <button
+                class="wa"
+                onclick="pesanWhatsApp()"
+            >
+                💬 Pesan via WhatsApp
             </button>
+
         </div>
 
-        <div class="card">
-            <div class="gambar">🥤</div>
-            <h3>Es Janggelan</h3>
-            <p>Minuman segar dengan janggelan dan kuah manis.</p>
-            <div class="harga">Rp5.000</div>
-            <button onclick="tambah('Es Janggelan', 5000)">
-                Tambah
-            </button>
-        </div>
+    </section>
 
-        <div class="card">
-            <div class="gambar">🥟</div>
-            <h3>Risol</h3>
-            <p>Risol renyah dengan isian yang lezat.</p>
-            <div class="harga">Rp4.000</div>
-            <button onclick="tambah('Risol', 4000)">
-                Tambah
-            </button>
-        </div>
 
-    </div>
+    <!-- KONTAK -->
 
-    <div id="keranjang">
-        <h2 id="pesanan">🛒 Pesanan</h2>
+    <section class="kontak" id="kontak">
 
-        <div id="daftarPesanan">
-            Belum ada pesanan.
-        </div>
+        <h2>📍 Kuliner Mojokerto</h2>
 
-        <div class="total">
-            Total: Rp<span id="total">0</span>
-        </div>
+        <br>
 
-        <button class="wa" onclick="pesanWhatsApp()">
-            💬 Pesan via WhatsApp
-        </button>
-    </div>
+        <p>📞 WhatsApp Kiarda: 0815-1559-1893</p>
 
-</section>
+        <p>📍 Mojokerto, Jawa Timur</p>
 
-<section class="info" id="kontak">
-    <h2>📍 Kuliner Mojokerto</h2>
-    <br>
-    <p>📞 WhatsApp: 0815-1559-1893</p>
-    <p>📍 Mojokerto, Jawa Timur</p>
-</section>
+    </section>
 
-<footer>
-    <p>© 2026 Kuliner Mojokerto</p>
-    <p>Enak, Segar, dan Murah</p>
-</footer>
 
-<script>
+    <!-- FOOTER -->
 
-let pesanan = [];
-let totalHarga = 0;
+    <footer>
 
-function tambah(nama, harga) {
+        <p>
+            © 2026 Kuliner Khas Mojokerto
+        </p>
 
-    pesanan.push({
-        nama: nama,
-        harga: harga
-    });
+        <p>
+            Enak • Segar • Bersahabat 
+        </p>
 
-    totalHarga += harga;
+    </footer>
 
-    tampilkan();
-}
 
-function tampilkan() {
+    <!-- JAVASCRIPT -->
 
-    let daftar = document.getElementById("daftarPesanan");
+    <script>
 
-    let html = "";
+        let pesanan = [];
 
-    pesanan.forEach(function(item, index) {
+        let totalHarga = 0;
 
-        html +=
-        (index + 1) + ". " +
-        item.nama +
-        " - Rp" +
-        item.harga.toLocaleString("id-ID") +
-        "<br>";
 
-    });
+        function tambah(nama, harga) {
 
-    if (pesanan.length == 0) {
-        html = "Belum ada pesanan.";
-    }
+            pesanan.push({
+                nama: nama,
+                harga: harga
+            });
 
-    daftar.innerHTML = html;
+            totalHarga += harga;
 
-    document.getElementById("total").innerText =
-        totalHarga.toLocaleString("id-ID");
-}
+            tampilkanPesanan();
 
-function pesanWhatsApp() {
+        }
 
-    if (pesanan.length == 0) {
-        alert("Silakan pilih menu terlebih dahulu.");
-        return;
-    }
 
-    let pesan =
-        "Halo, saya ingin memesan:%0A%0A";
+        function tampilkanPesanan() {
 
-    pesanan.forEach(function(item, index) {
+            let daftar =
+                document.getElementById("daftarPesanan");
 
-        pesan +=
-        (index + 1) + ". " +
-        item.nama +
-        " - Rp" +
-        item.harga.toLocaleString("id-ID") +
-        "%0A";
+            if (pesanan.length === 0) {
 
-    });
+                daftar.innerHTML =
+                    "Belum ada pesanan.";
 
-    pesan +=
-        "%0ATotal: Rp" +
-        totalHarga.toLocaleString("id-ID");
+                return;
 
-    pesan +=
-        "%0A%0ANama:%0AAlamat:%0ACatatan:";
+            }
 
-    let nomor =
-        "6281515591893";
 
-    window.open(
-        "https://wa.me/" + nomor + "?text=" + pesan,
-        "_blank"
-    );
-}
+            let html = "";
 
-</script>
+
+            pesanan.forEach(function(item, index) {
+
+                html +=
+                    (index + 1) +
+                    ". " +
+                    item.nama +
+                    " - Rp" +
+                    item.harga.toLocaleString("id-ID") +
+                    "<br>";
+
+            });
+
+
+            daftar.innerHTML = html;
+
+
+            document.getElementById("total").innerText =
+                totalHarga.toLocaleString("id-ID");
+
+        }
+
+
+        function pesanWhatsApp() {
+
+            if (pesanan.length === 0) {
+
+                alert(
+                    "Silakan pilih menu terlebih dahulu."
+                );
+
+                return;
+
+            }
+
+
+            let pesan =
+                "Halo, saya ingin memesan:%0A%0A";
+
+
+            pesanan.forEach(function(item, index) {
+
+                pesan +=
+                    (index + 1) +
+                    ". " +
+                    item.nama +
+                    " - Rp" +
+                    item.harga.toLocaleString("id-ID") +
+                    "%0A";
+
+            });
+
+
+            pesan +=
+                "%0ATotal: Rp" +
+                totalHarga.toLocaleString("id-ID");
+
+
+            pesan +=
+                "%0A%0ANama:%0AAlamat:%0ACatatan:";
+
+
+            let nomorWhatsApp =
+                "6281515591893";
+
+
+            window.open(
+                "https://wa.me/" +
+                nomorWhatsApp +
+                "?text=" +
+                pesan,
+                "_blank"
+            );
+
+        }
+
+    </script>
+
 
 </body>
 </html>
